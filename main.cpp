@@ -1,6 +1,9 @@
 #include <iostream>
 #include "SinglyLinkedList.h"
 #include "DoubleLinkedList.h"
+#include "Queue.h"
+#include "Stack.h"
+#include "AscedingPriorityQueue.h"
 
 using namespace std;
 template <typename T>
@@ -79,8 +82,55 @@ void doubleList() {
     cout << "Size of list: " << list.getSize() << endl;
 }
 
+template <typename T>
+
+void queue() {
+    Queue<T> queue;
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.enqueue(4);
+    queue.enqueue(5);
+    cout << "Elements in queue: " << queue << endl;
+    cout << "Peek first element: " << queue.peek() << endl;
+    cout << "Dequeue first element: " << queue.dequeue() << endl;
+    cout << "Dequeue second element: " << queue.dequeue() << endl;
+    cout << "Peek new first element: " << queue.peek() << endl;
+    cout << "Elements in queue: " << queue << endl;
+}
+
+void stack () {
+    Stack<int, 5> stack;
+    stack.push(6);
+    stack.push(7);
+    stack.push(8);
+    stack.push(9);
+    stack.push(10);
+    cout << "Elements in stack: " << stack << endl;
+    cout << "Peek top element: " << stack.peek() << endl;
+    cout << "Pop top element: " << stack.pop() << endl;
+    cout << "Pop top element: " << stack.pop() << endl;
+    cout << "Peek new top element: " << stack.peek() << endl;
+    cout << "Elements in stack: " << stack << endl;
+}
+
+void ascendingPriorityQueue () {
+    AscendingPriorityQueue<int> pq;
+    pq.enqueue(4, 1);
+    pq.enqueue(5, 2);
+    pq.enqueue(6, 3);
+    cout << "Queue: " << pq << endl;
+    cout << "Peek: " << pq.peek() << endl;
+    cout << "Dequeue: " << pq.dequeue() << endl;
+    cout << "Queue: " << pq << endl;
+}
+
+
 int main() {
-    singlylist<double>();
-    doubleList<int>();
+//    singlylist<double>();
+//    doubleList<int>();
+    queue<int>();
+    stack();
+    ascendingPriorityQueue();
     return 0;
 }
